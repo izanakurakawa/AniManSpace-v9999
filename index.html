@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AniManSpace | Global Anime AI Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- ================= ROOT STYLES ================= -->
+<style>
+:root{
+  --bg:#070711;
+  --card:#111122;
+  --pink:#ff2ea6;
+  --blue:#2ad0ff;
+  --text:#eaeaf0;
+  --neon:#2ad0ff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ================= STAR BACKGROUND ================= */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  opacity:0.4;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  position:fixed;
+  width:100%;
+  background:rgba(7,7,17,0.85);
+  backdrop-filter:blur(15px);
+  z-index:100;
+}
+
+.logo{
+  font-weight:800;
+  font-size:1.3rem;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nav-links a{
+  margin-left:30px;
+  text-decoration:none;
+  color:#ccc;
+  font-weight:500;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-3px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 10%;
+  z-index:50;
+  position:relative;
+}
+
+.hero h1{
+  font-size:3rem;
+  font-weight:800;
+  max-width:800px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:20px;
+  max-width:650px;
+  opacity:0.75;
+  line-height:1.6;
+}
+
+.cta-group{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn-primary{
+  padding:14px 40px;
+  border-radius:40px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(90deg,var(--pink),var(--blue));
+  color:white;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+}
+
+.btn-outline{
+  padding:14px 40px;
+  border-radius:40px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  border-color:var(--blue);
+}
+
+/* ================= FEATURES ================= */
+.features{
+  padding:100px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  border-color:rgba(255,255,255,0.15);
+  transform:translateY(-5px);
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+}
+</style>
+
+<!-- ================= HOME SECTION CSS ================= -->
+<link rel="stylesheet" href="home/home.css">
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">AniManSpace</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">AI Core</a>
+    <a href="#">Community</a>
+    <a href="#">Offline</a>
+    <a href="#">Profile</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>
+    The Future of 
+    <span class="gradient-text">Anime & Manhwa AI Ecosystem</span>
+  </h1>
+  <p>
+    AniManSpace is building the first intelligent platform uniting creators, readers, 
+    and studios through AI-powered storytelling, art generation, and digital distribution.
+  </p>
+
+  <div class="cta-group">
+    <button class="btn-primary">Enter Platform</button>
+    <button class="btn-outline">View Vision</button>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="features">
+  <div class="card">
+    <h3>AI Story Engine</h3>
+    <p>Create next-generation anime & manhwa narratives powered by adaptive AI systems.</p>
+  </div>
+  <div class="card">
+    <h3>Creator Marketplace</h3>
+    <p>A global digital marketplace connecting artists, writers, and studios.</p>
+  </div>
+  <div class="card">
+    <h3>App Ecosystem</h3>
+    <p>Seamless transition from web platform to mobile application environment.</p>
+  </div>
+</section>
+
+<!-- ================= HOME SECTION LOADING ================= -->
+<div id="home-section"></div>
+
+<script src="home/home.js" defer></script>
+<script>
+  fetch('home/home.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('home-section').innerHTML = html;
+    })
+    .catch(err => console.error('Error loading Home section:', err));
+</script>
+
+<!-- ================= STAR FIELD SCRIPT ================= -->
+<script>
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let stars = [];
+for(let i=0;i<150;i++){
+  stars.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    radius:Math.random()*1.2
+  });
+}
+
+function drawStars(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#ffffff";
+  stars.forEach(star=>{
+    ctx.beginPath();
+    ctx.arc(star.x,star.y,star.radius,0,Math.PI*2);
+    ctx.fill();
+  });
+}
+
+drawStars();
+
+window.addEventListener("resize",()=>{
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  drawStars();
+});
+</script>
+
+</body>
+  </html>
